@@ -1,0 +1,217 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300&family=Poppins:wght@300&family=Roboto:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300&family=Jost:wght@300&family=Poppins:wght@300&family=Roboto:wght@300&display=swap');
+
+
+*{
+    padding: 0;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    color: #000000;
+    transition: all 0.7s linear;
+}
+.navBar a {
+    font-size: 20px;
+    text-decoration: none;
+    font-weight: 900;
+}
+
+.navBar a:hover {
+    transition: 1s;
+    opacity: 0.7;
+}
+
+.navBar{
+    display: flex;
+    flex-direction: row;
+    padding: 2% 6%;
+    justify-content: space-between;
+    align-items: center;
+    background-color: lightblue;
+    position: relative;
+}
+.navList{
+    list-style: none;
+    display: flex;
+}
+
+.navList li{
+    margin: 5px;
+    padding: 8px 12px;
+}
+nav .fa{
+    display: none;
+}
+.mobile-menu div{
+    width: 32px;
+    height: 2px;
+    background: #000;
+    margin: 8px;
+    transition: 0.3s;
+}
+.mobile-menu{
+    display:none;
+    cursor:pointer;
+}
+.btn{
+    padding: 15px;
+    border-radius: 22px;
+    cursor: pointer;
+}
+
+.btn:hover{
+    animation: expand 2.5s ease-in-out infinite;
+    box-shadow: 3px 3px 3px 2px rgba(0, 0, 0, 0.2);
+}
+
+.btnLogin{
+    background-color: #fff;
+    border: 2px solid #000;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+}
+.modal{
+    position: fixed;
+    padding: 0;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.5);
+    transform: scale(1.1);
+    opacity: 0;
+    visibility: hidden;
+    transition: visibility 0,25s ease-in-out,transform 0.25s ease-in-out,
+    opacity 0.25s ease-in-out;
+}
+.modal-content{
+    background-color:#ffffff;
+    padding:16px 24px;
+    width: 40vw;
+    height: 50vh;
+    border-radius: 34px;
+    border-bottom-right-radius: 100px;
+}
+.close{
+    float:right;
+    width: 24px;
+    cursor: pointer;
+    background-color: lightgray;
+    text-align: center;
+    line-height: 20px;
+    margin-bottom: 3px;
+    margin-top: 5px;
+}
+.close:hover{
+    background-color: darkgray;
+}
+.show-modal{
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1.0);
+}
+.form-control{
+    border-radius: 17px;
+    border-bottom-right-radius: 63px;
+    height: 30px;
+    width: 75%;
+}
+.login{
+    padding-bottom: 15px;
+    font-size: 0.90rem;
+}
+.h1Login{
+    font-size: 1.75rem;
+    font-weight: bold;
+    color: #fff;
+    text-align: center;
+    padding-top: 8px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    width:100%;
+    height: 50px;
+    border-radius: 17px;
+    border-bottom-right-radius: 63px;
+    background-image: linear-gradient(to bottom right,#0CB8AE, #0D25B9);
+}
+.entrar{
+    background-color: lightgray;
+    color: #000;
+    border-radius: 17px;
+    border: none;
+    height: 30px;
+    width: 40%;
+    font-size: 15px;
+    font-weight: bold;
+    margin: 0 auto;
+    text-align: center;
+    outline: 0;
+    padding-bottom: 8px;
+    cursor: pointer;
+}
+.cadastro{
+    font-size: 15px;
+    padding-top: 15px;
+}
+footer{
+    margin-top: 200px;
+    padding-bottom: 20px;
+    padding: 4%;
+    height: 150px;
+    background-color: lightblue;
+    font-family: 'Jost', sans-serif;
+    font-size: 24px;
+}
+
+@media(max-width: 700px){
+    body{
+        overflow-x: hidden;
+    }
+    .navList{
+        position: absolute;
+        top: 13vh;
+        right: 0;
+        width: 30vw;
+        height: 92vh;
+        background: lightblue;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        transform: translateX(100%);
+        transition: transform 0.5s ease-in;
+    }
+    .navList li{
+        margin-left: 0;
+        opacity: 0;
+    }
+    .navList li{
+        margin-left: 0;
+        opacity: 0;
+    }
+    .mobile-menu{
+        display: block;
+    }
+    .navList.active{
+        transform: translateX(0);
+    }
+    @keyframes navLinkFade{
+        from{
+            opacity: 0;
+            transform: translateX(50px)
+        }
+        to{
+            opacity: 1;
+            transform: translateX(0)
+        }
+    }
+    .mobile-menu.active .line-1{
+        transform: rotate(-45deg) translate(-8px, 8px);
+    }
+    .mobile-menu.active .line-2{
+        opacity: 0;
+    }
+    .mobile-menu.active .line-3{
+        transform: rotate(45deg) translate(-5px, -7px);
+    }
+}
